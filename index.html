@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+
+    <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+<main>
+    <section class="password-generator-section">
+        <div class="password container">
+            <header class="password__header">
+                <h1 class="password__heading primary-heading font-size-100 text-grey text-align-center">Password
+                    generator</h1>
+            </header>
+
+            <div class="password__content flex flex--justify-space flex--align-center">
+                <label>
+                    <input type="text"
+                           class="password__value font-size-300"
+                           placeholder="P4$5W0rD!"
+                    />
+                </label>
+                <div class="password__copy flex">
+                    <p class="password__copy-text hidden text-green font-size-100 uppercase">Copied</p>
+                    <button class="password__copy-btn">
+                        <img class="password__copy-icon"
+                             src="images/icon-copy.svg"
+                             alt=""
+                             aria-hidden="true"
+                        />
+                    </button>
+                </div>
+            </div>
+
+            <div class="password__input flex flex--column">
+                <div class="password__character-input-wrapper flex flex--justify-space flex--align-center">
+                    <p class="password__character-label">Character length</p>
+                    <p class="password__character-length text-green font-size-200">10</p>
+                </div>
+                <div class="password__slider-wrapper">
+                    <label>
+                        <input class="password__character-slider"
+                               type="range"
+                               min="0"
+                               max="20"
+                               name="character-range"
+                               id="character-range"
+                        />
+                    </label>
+                </div>
+
+                <div class="password__check-boxes flex flex--column">
+                    <p class="password__error-message hidden">
+                        Please select a checkbox!
+                    </p>
+                    <div class="password__checkbox-wrapper flex flex--align-center">
+                        <input type="checkbox"
+                               name="password__checkbox"
+                               class="password__checkbox"
+                               id="password__checkbox--uppercase"
+                        />
+                        <label for="password__checkbox--uppercase" class="password__check-box-label">Include Uppercase Letters</label>
+                    </div>
+                    <div class="password__checkbox-wrapper flex flex--align-center">
+                        <input type="checkbox"
+                               name="password__checkbox"
+                               class="password__checkbox"
+                               id="password__checkbox--lowercase"
+                        />
+                        <label for="password__checkbox--lowercase" class="password__checkbox-label">Include Lowercase Letters</label>
+                    </div>
+                    <div class="password__checkbox-wrapper flex flex--align-center">
+                        <input type="checkbox"
+                               name="password__checkbox"
+                               class="password__checkbox"
+                               id="password__checkbox--numbers"
+                        />
+                        <label for="password__checkbox--numbers" class="password__checkbox-label">Include Numbers</label>
+                    </div>
+                    <div class="password__checkbox-wrapper flex flex--align-center">
+                        <input type="checkbox"
+                               name="password__checkbox"
+                               class="password__checkbox"
+                               id="password__checkbox--symbols"
+                        />
+                        <label for="password__checkbox--symbols" class="password__checkbox-label">Include Symbols</label>
+                    </div>
+
+                    <div class="password__strength flex flex--justify-space flex--align-center">
+                        <p class="password__strength-text">Strength</p>
+                        <div class="password__bars-wrapper flex flex--align-center">
+                            <p class="password__strength-text font-size-200 uppercase text-white"></p>
+                            <div class="password__strength-bars flex flex--align-center">
+                                <div class="password__strength-bar"></div>
+                                <div class="password__strength-bar"></div>
+                                <div class="password__strength-bar"></div>
+                                <div class="password__strength-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="password__btn-generate font-size-100">
+                        Generate
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+</body>
+</html>
+
+

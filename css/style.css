@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Font Family*/
+    --jetbrains-mono: 'JetBrains Mono', monospace;
+
+    /* Font Sizes */
+    --font-size-300: 1.5rem;
+    --font-size-200: 1.125rem;
+    --font-size-100: 1rem;
+
+    /* Colors */
+    --grey: hsl(251, 9%, 53%);
+    --almost-white: hsl(252, 11%, 91%);
+    --very-dark-gray: hsl(248, 10%, 15%);
+    --dark-gray: 251 9% 53%;
+    --neon-green: hsl(127, 100%, 82%);
+    --red: hsl(0, 91%, 63%);
+    --orange: hsl(13, 95%, 66%);
+    --yellow: hsl(42, 91%, 68%);
+
+    /* Spacing*/
+    --gap: 1rem;
+}
+
+@media (min-width: 32em) {
+    :root {
+        --font-size-300: 2rem;
+        --font-size-200: 1.5rem;
+        --font-size-100: 1.125rem;
+    }
+}
+
+/* css Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+p,
+button {
+    font-weight: 700;
+}
+
+/* Utility Classes */
+
+.flex {
+    display: flex;
+}
+
+.flex--justify-space {
+    justify-content: space-between;
+}
+
+.flex--justify-center {
+    justify-content: center;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--column {
+    flex-direction: column;
+}
+
+.font-size-300 {
+    font-size: var(--font-size-300);
+}
+
+.font-size-200 {
+    font-size: var(--font-size-200);
+}
+
+.font-size-100 {
+    font-size: var(--font-size-100);
+}
+
+.text-green {
+    color: var(--neon-green);
+}
+
+.text-white {
+    color: var(--almost-white);
+}
+
+.text-grey {
+    color: var(--grey);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Styling up the body */
+body {
+    font-family: var(--jetbrains-mono);
+    background-color: var(--very-dark-gray);
+    color: var(--almost-white);
+    font-size: var(--font-size-100);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Generated Password Box*/
+.password-generator-section {
+    padding: 2rem 0;
+}
+
+.container {
+    padding-inline: 0.5rem;
+    max-width: 40rem;
+}
+
+.primary-heading {
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 32em) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
+
+@media (min-width: 48em) {
+    .container {
+        min-width: 40rem;
+        max-width: 40rem;
+    }
+}
+
+.password__content {
+    background-color: hsl(var(--dark-gray) / 0.1);
+    padding: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.password__value {
+    background: transparent;
+    border: none;
+    color: var(--almost-white);
+    width: 80%;
+}
+
+.password__value:focus {
+    outline: none;
+}
+
+.password__copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.password__copy-btn:hover .password__copy-icon {
+    filter: brightness(450%) contrast(101%);
+}
+
+.password__copy {
+    gap: 1rem;
+}
+
+.password__copy-text.hidden {
+    display: none;
+}
+
+.password__copy-text {
+    display: block;
+}
+
+@media (min-width: 32em) {
+    .password__content {
+        padding: 1rem;
+    }
+}
+
+
+/* User Choice content*/
+.password__input {
+    background-color: hsl(var(--dark-gray) / 0.1);
+    padding: 1.5rem 0.5rem;
+    gap: 1.25rem;
+}
+
+@media (min-width: 32em) {
+    .password__input {
+        padding-inline: 1rem;
+    }
+}
+
+/* Slider Styling */
+.password__character-slider {
+    width: 100%;
+    accent-color: var(--neon-green);
+}
+
+/* CheckBoxes*/
+.password__check-boxes {
+    gap: 1rem;
+    position: relative;
+    padding: 0.75rem 0;
+}
+
+.hidden.password__error-message {
+    opacity: 0;
+}
+
+.password__error-message {
+    color: red;
+    font-size: 0.8125rem;
+    position: absolute;
+    opacity: 1;
+    top: -1rem;
+    left: 0;
+}
+
+.password__checkbox {
+    accent-color: var(--neon-green);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Strength Bars*/
+.password__strength {
+    background-color: var(--very-dark-gray);
+    padding: 1rem 0.5rem;
+}
+
+.password__bars-wrapper {
+    gap: 0.5rem;
+}
+
+.password__strength-bars {
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.password__strength-bar {
+    width: 0.5rem;
+    height: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--almost-white);
+}
+
+.password__strength-text {
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 32em) {
+    .password__bars-wrapper {
+        gap: 0.6rem;
+    }
+
+    .password__strength-bar {
+        width: 0.6rem;
+        height: 1.6rem;
+    }
+
+    .password__strength-bars {
+        gap: 0.45rem;
+    }
+}
+
+@media (min-width: 48em) {
+    .password__bars-wrapper {
+        gap: 0.75rem;
+    }
+
+    .password__strength-bar {
+        width: 0.75rem;
+        height: 1.75rem;
+    }
+
+    .password__strength-bars {
+        gap: 0.5rem;
+    }
+
+}
+
+.password__strength-bar:nth-child(1).bar-active {
+    background-color: var(--red);
+    border: transparent;
+}
+
+.password__strength-bar:nth-child(2).bar-active {
+    background-color: var(--orange);
+    border: transparent;
+}
+
+.password__strength-bar:nth-child(3).bar-active {
+    background-color: var(--yellow);
+    border: transparent;
+}
+
+.password__strength-bar:nth-child(4).bar-active {
+    background-color: var(--neon-green);
+    border: transparent;
+}
+
+/*  Generate Button*/
+.password__btn-generate {
+    background-color: var(--neon-green);
+    text-transform: uppercase;
+    color: var(--very-dark-gray);
+    border: 2px solid transparent;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.password__btn-generate:hover {
+    background-color: transparent;
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+
+
+
+
+
+
+
+
+
